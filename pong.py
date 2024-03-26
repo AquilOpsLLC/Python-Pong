@@ -1,5 +1,5 @@
 import turtle 
-import os 
+from playsound import playsound 
 
 wn = turtle.Screen()
 wn.title("Pong by @AquilOps LLC")
@@ -94,12 +94,11 @@ while True:
     if ball.ycor() > 290:
        ball.sety(290)
        ball.dy *= -1
-       os.system("aplay beeep.mp3&")
-
+       playsound("beeep.mp3")
     elif ball.ycor() < -290:
        ball.sety(-290)
        ball.dy *= -1
-       os.system("aplay beeep.mp3&")
+       playsound("beeep.mp3")
 
     if ball.xcor() > 350:
        score_a += 1
@@ -119,9 +118,9 @@ while True:
     # Gamer and ball collisions
     if ball.xcor() < -340 and ball.ycor() < gamer_a.ycor() + 50 and ball.ycor() > gamer_a.ycor() - 50:
         ball.dx *= -1 
-        os.system("aplay plop.mp3&")
+        playsound("beeep.mp3")
 
     elif ball.xcor() > 340 and ball.ycor() < gamer_b.ycor() + 50 and ball.ycor() > gamer_b.ycor() - 50:
         ball.dx *= -1
-        os.system("aplay plop.mp3&")
+        playsound("beeep.mp3")
 
